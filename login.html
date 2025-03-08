@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="images/LOGO.jpg" type="image/x-icon" />
+</head>
+<style>
+  @font-face {
+    font-family: "pain";
+    src: url(font/Painkiller\ Demo.ttf);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: url(images/Lone\ Hiker\ on\ Misty\ Cliff.jpeg);
+    font-family: "cla";
+  }
+
+  .container {
+    height: 480px;
+    width: 25%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px teal;
+  }
+
+  .title {
+    text-align: center;
+    text-shadow: 0 0 10px rgb(172, 161, 19);
+  }
+
+  form label {
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 10px;
+  }
+
+  form input {
+    width: 90%;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.5s ease-in;
+  }
+
+  .for {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  #got {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  #got:hover {
+    text-decoration: underline;
+  }
+
+  .btn {
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    padding: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+  }
+
+  .btn a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  #acc {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #sig {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.2rem;
+  }
+
+  #sig:hover {
+    text-decoration: underline;
+  }
+
+  .sign-up {
+    border: 1px solid teal;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px teal;
+    width: 25%;
+  }
+
+  #submit {
+    font-size: 18px;
+    border: 1px solid black;
+    margin: 26px;
+    text-align: center;
+    border-radius: 16px;
+    font-weight: 600;
+    background: black;
+    color: rgb(255, 255, 255);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  /* sign */
+  #logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 40%;
+  }
+
+  #already {
+    text-decoration: none;
+    font-size: 19px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    color: black;
+    text-align: center;
+  }
+
+  #already:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 450px) {
+    body {
+      color: azure;
+    }
+  }
+
+  #sign_up {
+    display: none;
+  }
+</style>
+
+<body>
+  <div class="container" id="cont">
+    <h1 class="title">Login</h1>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" oninput="validateName()" />
+      <span><i class="fa-solid fa-user"></i></span><br />
+      <p id="name_error"></p>
+      <label for="pass">Password</label>
+      <input type="password" id="pass" oninput="validatePassword()" />
+      <span><i class="fa-solid fa-key"></i></span>
+      <p id="password_error"></p>
+    </form>
+    <div class="for">
+      <div class="rem">
+        <input type="checkbox" id="rem" />
+        <label for="rem">Remember Me</label>
+      </div>
+      <a href="" id="got">Forgot Password</a>
+    </div>
+    <div class="btn"><a href="index.html">Submit</a></div>
+    <p id="sig" onclick="showSignUp()">Create an Account? Sign Up</p>
+  </div>
+  <div class="sign-up" id="sign_up">
+    <form action="" id="fs">
+      <img src="images/LOGO.jpg" alt="" id="logo" />
+      <label for="name">Name</label>
+      <input type="text" />
+      <label for="email">Email</label>
+      <input type="email" />
+      <label for="password">Password</label>
+      <input type="password" />
+      <label for="password">Confirm password</label>
+      <input type="password" />
+      <input type="submit" id="submit" />
+    </form>
+    <p id="already" onclick=" Loginpage()">Already have an Account? Login</p>
+  </div>
+  <script>
+    var SignUpbtn = document.getElementById("sig");
+    var loginbtn = document.getElementById("already");
+    var container = document.getElementById("cont");
+    var sign_up = document.getElementById("sign_up");
+    function showSignUp() {
+      container.style.display = "none";
+      sign_up.style.display = "block";
+    }
+    function Loginpage() {
+      container.style.display = "block";
+      sign_up.style.display = "none";
+    }
+
+    var Name = document.getElementById("name");
+    var password = document.getElementById("pass");
+    var username_error = document.getElementById("name_error");
+    var pass_error = document.getElementById("password_error")
+
+    var letterPattern = /[A-Z]/;
+    var numberPattern = /[0-9]/;
+    var specialCharPattern = /[!@#$%^&()]/;
+
+    function validateName() {
+      if (Name.value === "") {
+        username_error.textContent = "user name cannot be empty";
+      } else {
+        if (Name.value.length < 6) {
+          username_error.textContent = "user name atleast 6 letters ";
+        } else if (!letterPattern.test(Name.value)) {
+          username_error.textContent = "user name must contain one upper charector";
+        } else if (!numberPattern.test(Name.value)) {
+          username_error.textContent = "user name must contain one number";
+        } else if (!specialCharPattern.test(Name.value)) {
+          username_error.textContent = "user name must contain one special charector!@#$%^&*()";
+        } else {
+          username_error.textContent = "user name valid";
+        }
+      }
+    };
+
+    function validatePassword() {
+      if (password.value === "") {
+        pass_error.textContent = "password cannot be empty"
+      } else {
+        if (letterPattern.test(password.value)) {
+          pass_error.textContent = "passwot contain uppercase|| user valid!"
+        } else {
+          pass_error.textContent = "password must contain atleast one uppercase"
+        }
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
